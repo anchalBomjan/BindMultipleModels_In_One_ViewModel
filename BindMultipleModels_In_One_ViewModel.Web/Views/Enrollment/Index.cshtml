@@ -1,0 +1,25 @@
+﻿@model BindMultipleModels_In_One_ViewModel.Web.Models.StudentCourseEnrollmentViewModel
+
+<form asp-action="Create" method="post">
+    <div>
+        <label asp-for="Student.StudentID"></label>
+        <input asp-for="Student.StudentID" />
+    </div>
+    <div>
+        <label asp-for="Student.Name"></label>
+        <input asp-for="Student.Name" />
+    </div>
+    <div>
+        <label asp-for="Student.Email"></label>
+        <input asp-for="Student.Email" />
+    </div>
+    <div>
+        <label asp-for="Enrollment.CourseID"></label>
+        <select asp-for="Enrollment.CourseID" asp-items="@(new SelectList(Model.Courses, "CourseID", "CourseName"))"></select>
+    </div>
+    <div>
+        <label asp-for="Enrollment.EnrollmentDate"></label>
+        <input asp-for="Enrollment.EnrollmentDate" type="datetime" />
+    </div>
+    <button type="submit">Submit</button>
+</form>
