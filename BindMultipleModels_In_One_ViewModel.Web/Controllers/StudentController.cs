@@ -24,7 +24,7 @@ namespace BindMultipleModels_In_One_ViewModel.Web.Controllers
         // POST: /Student/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Student viewModel)
+        public async Task<IActionResult> Create(StudentViewModel viewModel)
         {
             if (!ModelState.IsValid)
             {
