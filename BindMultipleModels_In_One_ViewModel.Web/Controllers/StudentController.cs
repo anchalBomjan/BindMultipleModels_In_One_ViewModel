@@ -71,7 +71,7 @@ namespace BindMultipleModels_In_One_ViewModel.Web.Controllers
         // POST: /Student/Edit
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, Student viewModel)
+        public async Task<IActionResult> Edit(string id, StudentViewModel viewModel)
         {
             if (string.IsNullOrEmpty(id) || !ModelState.IsValid)
             {
@@ -83,7 +83,7 @@ namespace BindMultipleModels_In_One_ViewModel.Web.Controllers
             {
                 return View("Error", new ErrorViewModel { RequestId = $"No student found with ID {id}" });
             }
-
+            student.StudentID = viewModel.StudentID;
             student.Name = viewModel.Name;
             student.Email = viewModel.Email;
 
