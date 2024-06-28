@@ -17,7 +17,8 @@ namespace BindMultipleModels_In_One_ViewModel.Web.Models
 		[Required]
 		public DateTime EnrollmentDate { get; set; }
 
-		public Student Student { get; set; }
+        // Navigation properties for related data
+        public Student Student { get; set; }
 		public Course Course { get; set; }
 	}
 
