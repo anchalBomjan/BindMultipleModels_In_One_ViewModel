@@ -6,7 +6,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BindMultipleModels_In_One_ViewModel.Web.Controllers
 {
-
     public class EnrollmentController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -27,7 +26,7 @@ namespace BindMultipleModels_In_One_ViewModel.Web.Controllers
         // POST: /Enrollment/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Enrollment viewModel)
+        public async Task<IActionResult> Create(EnrollmentViewModel viewModel)
         {
             if (!ModelState.IsValid)
             {
@@ -79,7 +78,7 @@ namespace BindMultipleModels_In_One_ViewModel.Web.Controllers
         // POST: /Enrollment/Edit
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, Enrollment viewModel)
+        public async Task<IActionResult> Edit(int id, EnrollmentViewModel viewModel)
         {
             if (id <= 0 || !ModelState.IsValid)
             {
@@ -118,6 +117,4 @@ namespace BindMultipleModels_In_One_ViewModel.Web.Controllers
             return RedirectToAction(nameof(Index));
         }
     }
-
-
 }
